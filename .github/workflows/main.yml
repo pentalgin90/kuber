@@ -27,7 +27,7 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
     - name: Maven install
-      run: sudo apt-get install mvn -y
+      run: sudo apt-get install maven -y
 
     - name: Provide permission to run mvnw
       run: chmod +x ./mvnw
