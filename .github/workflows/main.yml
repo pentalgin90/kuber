@@ -14,8 +14,8 @@ jobs:
  
   build:
     name: Build, push, and deploy
-    runs-on: ubuntu-latest
-    steps:
+    runs-on: pentalgin/spring-boot
+    steps: 
  
     - name: Checkout main
       uses: actions/checkout@main
