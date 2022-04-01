@@ -30,7 +30,7 @@ jobs:
       run: sudo apt-get install maven -y
 
     - name: Run mvnw
-      run: ./mvn install
+      run: mvn install
 
     - name: Build and push Spring Boot Image
       id: spring-boot-docker_build
