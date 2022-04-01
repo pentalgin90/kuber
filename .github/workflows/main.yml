@@ -26,9 +26,6 @@ jobs:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
-    - name: Java install
-      run: sudo java -version
-
     - name: Maven install
       run: sudo apt-get install maven -y
 
