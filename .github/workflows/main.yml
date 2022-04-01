@@ -25,12 +25,17 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
- 
+
+    - name: Provide permission to run mvnw
+      run: chmod +x ./mvnw
+
+    - name: Run mvnw
+      run: ./mvnw install
+
     - name: Build and push Spring Boot Image
       id: spring-boot-docker_build
       uses: docker/build-push-action@v2
       with:
-        version: v0.7.0
         context: ./
         file: ./Dockerfile
         push: true
