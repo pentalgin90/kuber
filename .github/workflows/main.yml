@@ -29,11 +29,8 @@ jobs:
     - name: Maven install
       run: sudo apt-get install maven -y
 
-    - name: Provide permission to run mvnw
-      run: chmod +x ./mvnw
-
     - name: Run mvnw
-      run: ./mvnw install
+      run: ./mvn install
 
     - name: Build and push Spring Boot Image
       id: spring-boot-docker_build
