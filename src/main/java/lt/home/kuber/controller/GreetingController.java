@@ -12,9 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/hello")
 public class GreetingController {
 
+    @GetMapping
+    public ResponseEntity<String> get() {
+        return new ResponseEntity<>("Hello world!!!", HttpStatus.OK);
+    }
+
     @GetMapping("{name}")
     public ResponseEntity<String> sayHello(@PathVariable String name) {
-        var answer = Strings.isNotBlank(name) ? name : "Everyone";
-        return new ResponseEntity<>("Hello " + answer, HttpStatus.OK);
+        return new ResponseEntity<>("Hello " + name, HttpStatus.OK);
     }
 }
